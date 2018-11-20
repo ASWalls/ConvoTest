@@ -1,0 +1,84 @@
+/* Global Styles *************************************************/
+html, body{
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Gill Sans','Gill Sans MT','Calibri',sans-serif; 
+    background: #1465E8;
+}
+@font-face {
+    font-family: 'rock-salt';
+    src: url('fonts/rock-salt/RockSalt-webfont.eot');
+    src: url('fonts/rock-salt/RockSalt-webfont.eot') format('embedded-opentype'),
+         url('fonts/rock-salt/RockSalt-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+a {
+    color: #A9C7F6;
+    text-decoration: none;
+}
+
+/* Header Styles *************************************************/
+header {
+    background: #C33200;
+    color: #FDEADF;
+    margin-bottom: 30px;
+}
+.header-content {
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+}
+header h1, header h2, header nav, header ul, header li {
+    display: inline-block;
+}
+header h1, header h2 {
+    font-family: 'rock-salt';
+}
+header h1 {
+    font-size: 3em; 
+    line-height: 2em;
+    margin-right: 30px;
+}
+header nav {
+    margin-top: 3em;
+    height: 100%;
+    float: right;
+}
+
+
+/* Main Content Styles *******************************************/
+main{
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+    padding: 30px;
+    background: #FDEADF;
+    display: flex;
+}
+
+/* Player Image Styles *******************************************/
+.player-box {
+    float: left;
+    width: 25%;
+}
+#player-img {
+    width: 100%;
+}
+
+/* Convo Content Styles ******************************************/
+.convo {
+    display: inline-block;
+    width: 50%;
+    padding: 0 30px;
+}
+
+
+/* Partner Image Styles ******************************************/
+.partner-box {
+    float: right;
+    width: 25%;
+}
+#partner-img {
+    width: 100%;
+}
