@@ -24,10 +24,19 @@ $(document).ready(function () {
         /* 7 */ new Dialogue(true, "Maybe think a little harder next time.", 'normal', []),
     );
 
-    let currentDialogue = allDialogue[0];
-    for (let i = 0; i < currentDialogue.responses.length; i++) {
-        $('#choices').append(
-            allDialogue[currentDialogue.responses[i]].blockText()
-        );
+    Dialogue.prototype.showResponses = function() {
+        let $choiceDiv = $('<div>');
+        for(let i = 0; i < this.responses.length; i++) {
+            let index = this.responses[i];
+            $choiceDiv.append(
+                allDialogue[index].blockText().attr('data-index', index)
+            );
+        }
+        return $choiceDiv;
     }
+    
+    let currentDialogue = allDialogue[0];
+    $('#choices').html(currentDialogue.showResponses().html());
+
+    
 });
