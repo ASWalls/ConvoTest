@@ -1,0 +1,18 @@
+them-talk object:
+    -says
+    -wait-time
+    -emote
+    -[responses (ref), including no-talk response]
+
+you-talk object:
+    -responses: [{can-say, emote, response (,optional follow-up)}]
+
+they talk
+wait
+on clicking response:
+    -move it to the record
+    -emote if needed
+    -wait
+    -add their response
+
+

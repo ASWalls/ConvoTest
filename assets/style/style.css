@@ -52,7 +52,6 @@ main{
     width: 80%;
     height: auto;
     margin: 0 auto;
-    padding: 30px;
     background: #FDEADF;
     display: flex;
 }
@@ -70,9 +69,30 @@ main{
 .convo {
     display: inline-block;
     width: 50%;
+    height: auto;
     padding: 0 30px;
 }
-
+#convo-record {
+    height: 450px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column-reverse;
+}
+.convo li {
+    margin: 5px 0;
+    padding: 7px 10px;
+}
+.convo li.them {
+    background: #E3A18B;
+    color: #6B1C00;
+}
+.convo li.you, .convo #choices li {
+    background: #A9C7F6;
+    color: #04132B;
+}
+#choices li:hover {
+    background: #699DF0;
+}
 
 /* Partner Image Styles ******************************************/
 .partner-box {
