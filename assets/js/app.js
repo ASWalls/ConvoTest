@@ -8,7 +8,9 @@ $(document).ready(function () {
     }
 
     Dialogue.prototype.blockText = function () {
-        return $('<li>').html(this.text);
+        let $block = $('<li>').html(this.text);
+        this.isYou ? $block.addClass('you') : $block.addClass('them');
+        return $block;
     }
 
     const allDialogue = [];
@@ -19,7 +21,11 @@ $(document).ready(function () {
         /* 3 */ new Dialogue(true, "...", 'normal', [4]),
         /* 4 */ new Dialogue(false, "I thought-<br/>I thought you'd get away.<br/>'" +
             "If'd known you'd be imprisoned...", 'normal', [6, 7]),
-        /* 5 */ new Dialogue(false, "I'm glad.", 'normal', []),
+        /* 5 */ new Dialogue(false, "I'm glad.<br/>" + 
+            "I know you don’t want to hear it, but I really-<br/>" + 
+            "<span class='act'>SIGH</span><br/>" + 
+            "I really thought… I had to sacrifice something. To prove myself. To prove I’m not selfish.",
+            'normal', []),
         /* 6 */ new Dialogue(true, "I'm not upset about doing time, Arjana.", 'normal', []),
         /* 7 */ new Dialogue(true, "Maybe think a little harder next time.", 'normal', []),
     );
@@ -38,5 +44,12 @@ $(document).ready(function () {
     let currentDialogue = allDialogue[0];
     $('#choices').html(currentDialogue.showResponses().html());
 
+    $('#choices').on('click', 'li', function() {
+        $(this).prependTo($('#convo-record'));
+        $('#choices').empty();
+        let response = allDialogue[ allDialogue[$(this).attr('data-index')].responses[0] ];
+        response.blockText().prependTo($('#convo-record'));
+        $('#choices').html(response.showResponses().html());
+    });
     
 });
